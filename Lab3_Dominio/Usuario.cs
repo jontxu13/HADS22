@@ -38,7 +38,7 @@ namespace Lab3_Dominio
             var n= 0;
             for (int j = 0; j < 7; j++)
             {
-                n = rnd.Next();
+                n = rnd.Next(0, 9);
             }
 
             return n;

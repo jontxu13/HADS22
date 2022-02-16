@@ -10,30 +10,12 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            Hola señorit@!<br />
-            Estos son tus datos:<br />
-            <br />
-            Email:
+            Hola señorit@
             <asp:Label ID="labelEmail" runat="server"></asp:Label>
-            <br />
-            Nombre:
-            <asp:Label ID="labelNombre" runat="server"></asp:Label>
-            <br />
-            Apellidos:
-            <asp:Label ID="labelApellidos" runat="server"></asp:Label>
-            <br />
-            Numconfir:
-            <asp:Label ID="labelNumconfir" runat="server"></asp:Label>
-            <br />
-            Tipo:
-            <asp:Label ID="labelTipo" runat="server"></asp:Label>
-            <br />
-            Contraseña:
-            <asp:Label ID="labelPass" runat="server"></asp:Label>
-            <br />
-            Codpass:
-            <asp:Label ID="labelCodpass" runat="server"></asp:Label>
-        </div>
+            !</div>
+        <p>
+            <asp:Button ID="btnSalir" runat="server" OnClick="btnSalir_Click" Text="Salir" />
+        </p>
     </form>
 </body>
 </html>

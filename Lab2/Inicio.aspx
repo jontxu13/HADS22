@@ -19,14 +19,14 @@
     <p>
         Password:
         </br>
-        <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPassword" ErrorMessage="*" ForeColor="#FF3300"></asp:RequiredFieldValidator>
     </p>
     <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
                 <br />
                 <asp:Label ID="error" runat="server" ForeColor="#FF3300"></asp:Label>
                 <br />
-    <a href="javascript:__doPostBack('LinkButton1','')">Quiero registrarme</a><br />
+    <a href="Registro.aspx">Quiero registrarme</a><br />
     <a href="javascript:__doPostBack('LinkButton1','')">Modificar Contraseña</a></form>
         </div>
     </form>

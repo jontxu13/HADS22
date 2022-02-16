@@ -13,9 +13,14 @@ namespace Lab2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            BL bl = new BL();
-            Usuario u = bl.getUsuarioDB("s");
-            
+            labelEmail.Text = Convert.ToString(Session["user"]);
+        }
+
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Hasta pronto!'); location.href='Inicio.aspx'", true);
+            Session.Abandon();
+
         }
     }
 }

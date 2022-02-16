@@ -38,7 +38,8 @@ namespace Lab2
             }
             else
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Bienvenido!'); location.href='Welcome.aspx'", true);
+                Session["user"] = txtEmail.Text;
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Bienvenido! " + Session["user"] + "'); location.href='Welcome.aspx'", true);
             }
         }
     }
