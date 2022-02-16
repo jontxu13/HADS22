@@ -72,6 +72,7 @@
     <Content Include="Inicio.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Welcome.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CambiarPassword.aspx.cs">
@@ -103,15 +104,34 @@
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Welcome.aspx.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Welcome.aspx.designer.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\hads22-14 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\hads22-14 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lab3_Dominio\Lab3_Dominio.csproj">
+      <Project>{EB6DD5C1-2EDD-48CF-AE4C-76942BF2B09D}</Project>
+      <Name>Lab3_Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lab3_LogicaNegocio\Lab3_LogicaNegocio.csproj">
+      <Project>{220C3318-EFD3-4F74-88EB-239A84891EDC}</Project>
+      <Name>Lab3_LogicaNegocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

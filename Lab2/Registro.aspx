@@ -26,23 +26,26 @@
             <br />
             Password:
   Password:
-            <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtPassword" ErrorMessage="*" ForeColor="#FF3300"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtPassword" ErrorMessage="Mínimo 6 carácteres" ForeColor="#FF3300" ValidationExpression="d{6,}"></asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtPassword" ErrorMessage="Mínimo 6 carácteres" ForeColor="#FF3300" ValidationExpression="^.{6,}$"></asp:RegularExpressionValidator>
             <br />
             Repetir Psw:
-            <asp:TextBox ID="txtRepPass" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtRepPass" runat="server" TextMode="Password"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtRepPass" ErrorMessage="*" ForeColor="#FF3300"></asp:RequiredFieldValidator>
-            <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtPassword" ErrorMessage="Las contraseñas no coinciden" ForeColor="#FF3300"></asp:CompareValidator>
+            <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtPassword" ErrorMessage="Las contraseñas no coinciden" ForeColor="#FF3300" ControlToValidate="txtRepPass"></asp:CompareValidator>
             <br />
             <br />
-            Rol:<asp:RadioButtonList ID="rdbtnRol" runat="server" OnSelectedIndexChanged="rdbtnRol_SelectedIndexChanged">
+            Rol:<asp:RadioButtonList ID="rdbtnRol" runat="server">
                 <asp:ListItem>Alumno</asp:ListItem>
                 <asp:ListItem>Profesor</asp:ListItem>
             </asp:RadioButtonList>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="rdbtnRol" ErrorMessage="Seleccione rol." ForeColor="#FF3300"></asp:RequiredFieldValidator>
 &nbsp;</div>
-        <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" />
+        <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" OnClick="btnRegistrar_Click1" />
+        <p>
+            <asp:Label ID="error" runat="server" ForeColor="#FF3300"></asp:Label>
+        </p>
     </form>
 </body>
 </html>
