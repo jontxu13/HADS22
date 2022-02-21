@@ -35,12 +35,7 @@ namespace Lab3_Dominio
         public int generarNumero()
         {
             Random rnd = new Random();
-            var n= 0;
-            for (int j = 0; j < 7; j++)
-            {
-                n = rnd.Next(0, 9);
-            }
-
+            var n = rnd.Next(1000000, 9999999);
             return n;
         }
     }

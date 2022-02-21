@@ -25,7 +25,6 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtApellidos" ErrorMessage="*" ForeColor="#FF3300"></asp:RequiredFieldValidator>
             <br />
             Password:
-  Password:
             <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtPassword" ErrorMessage="*" ForeColor="#FF3300"></asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtPassword" ErrorMessage="Mínimo 6 carácteres" ForeColor="#FF3300" ValidationExpression="^.{6,}$"></asp:RegularExpressionValidator>

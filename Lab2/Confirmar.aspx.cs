@@ -14,7 +14,7 @@ namespace Lab2
         {
             BL bl = new BL();
             var email = Request.Params["email"];
-            int n = Convert.ToInt32(Request.Params["n"]);
+            int n = Convert.ToInt32(Request.Params["confirmacion"]);
             if(bl.confirmarUsuario(email, n) ==0){ 
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Cuenta confirmada! " + Session["user"] + "'); location.href='Welcome.aspx'", true);
             }

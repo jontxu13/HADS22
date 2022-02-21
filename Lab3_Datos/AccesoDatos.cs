@@ -109,24 +109,13 @@ namespace Lab3_Datos
                 SqlConnection connection = new SqlConnection();
                 connection.ConnectionString = "Data Source=tcp:hads14j.database.windows.net,1433;Initial Catalog=hads;Persist Security Info=True;User ID=jon;Password=Hads1422";
                 connection.Open();
-
-                var command = new SqlCommand("SELECT * FROM Usuarios WHERE email=@email and numconfir=@numconfir", connection);
-
+                var command = new SqlCommand("update Usuarios set confirmado=@confirmado where email=@email and numconfir=@numconfir", connection);
                 command.Parameters.AddWithValue("@email", email);
                 command.Parameters.AddWithValue("@numconfir", n);
-                if (command.ExecuteReader().HasRows)
-                {
-                    var command2 = new SqlCommand("UPDATE Usuarios SET confirmado = True where email = @email", connection);
-                    command2.Parameters.AddWithValue("@email", email);
-                    command2.ExecuteNonQuery();
-                    connection.Close();
-                    return 0;
-                }
-                else
-                {
-                    connection.Close();
-                    return 1;
-                }
+                command.Parameters.AddWithValue("@confirmado", true);
+                command.ExecuteNonQuery();
+                connection.Close();
+                return 0;
 
             }
             catch (Exception e)
