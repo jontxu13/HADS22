@@ -32,14 +32,19 @@ namespace Lab2
             {
                 error.Text = "Algo salió mal";
             }
-            else if(resul == 1)
+            else if(resul == -2)
             {
                 error.Text = "Usuario o contraseña incorrecto.";
             }
-            else
+            else if(resul == 0)
             {
                 Session["user"] = txtEmail.Text;
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Bienvenido! " + Session["user"] + "'); location.href='Welcome.aspx'", true);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Bienvenido! " + Session["user"] + "'); location.href='Alumno/Alumno.aspx'", true);
+            }
+            else if(resul == 1)
+            {
+                Session["user"] = txtEmail.Text;
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Bienvenido! " + Session["user"] + "'); location.href='Profesor/Profesor.aspx'", true);
             }
         }
     }

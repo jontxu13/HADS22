@@ -30,7 +30,7 @@ namespace Lab2
 
             if (resul == -1)
             {
-                error.Text = "Algo salió mal";
+                error.Text = "Email ya registrado";
             }
             else
             {

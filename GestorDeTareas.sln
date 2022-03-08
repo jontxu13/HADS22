@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2_Presentación", "Lab2\Lab2_Presentación.csproj", "{F08762D4-669E-46E6-9A68-B75001DD6AD9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2+Lab4_Presentación", "Lab2\Lab2+Lab4_Presentación.csproj", "{F08762D4-669E-46E6-9A68-B75001DD6AD9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3_LogicaNegocio", "Lab3_LogicaNegocio\Lab3_LogicaNegocio.csproj", "{220C3318-EFD3-4F74-88EB-239A84891EDC}"
 EndProject

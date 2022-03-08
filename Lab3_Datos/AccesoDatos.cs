@@ -46,7 +46,7 @@ namespace Lab3_Datos
                 Usuario u = new Usuario(email, nombre, apellidos, tipo, pass);
                 u.numconfir = u.generarNumero();
 
-                var command = new SqlCommand("INSERT INTO Usuarios VALUES(@email, @nombre, @apellidos, @numconfir, @confirmado, @tipo, @pass, @codpass)", connection);
+                var command = new SqlCommand("INSERT INTO Usuario VALUES(@email, @nombre, @apellidos, @numconfir, @confirmado, @tipo, @pass, @codpass)", connection);
 
                 command.Parameters.AddWithValue("@email", u.email);
                 command.Parameters.AddWithValue("@nombre", u.nombre);
@@ -79,19 +79,33 @@ namespace Lab3_Datos
                 connection.ConnectionString = "Data Source=tcp:hads14j.database.windows.net,1433;Initial Catalog=hads;Persist Security Info=True;User ID=jon;Password=Hads1422";
                 connection.Open();
 
-                var command = new SqlCommand("SELECT * FROM Usuarios WHERE email=@email and pass=@pass", connection);
+                var command = new SqlCommand("SELECT * FROM Usuario WHERE email=@email and pass=@pass", connection);
 
                 command.Parameters.AddWithValue("@email", email);
                 command.Parameters.AddWithValue("@pass", pass);
+                command.ExecuteNonQuery();
                 if (command.ExecuteReader().HasRows)
                 {
-                    connection.Close();
+                    //var reader = command.ExecuteReader();
+                    //reader.Read();
+                    //if (Convert.ToString(reader[5]) == "Alumno")
+                    //{
+                    //    connection.Close();
+                    //    return 0;
+                    //}
+                    //else
+                    //{
+                    //    connection.Close();
+                    //    return 1;
+                    //}
+
                     return 0;
+                    
                 }
                 else
                 {
                     connection.Close();
-                    return 1;
+                    return -2;
                 } 
 
             }
@@ -109,7 +123,7 @@ namespace Lab3_Datos
                 SqlConnection connection = new SqlConnection();
                 connection.ConnectionString = "Data Source=tcp:hads14j.database.windows.net,1433;Initial Catalog=hads;Persist Security Info=True;User ID=jon;Password=Hads1422";
                 connection.Open();
-                var command = new SqlCommand("update Usuarios set confirmado=@confirmado where email=@email and numconfir=@numconfir", connection);
+                var command = new SqlCommand("update Usuario set confirmado=@confirmado where email=@email and numconfir=@numconfir", connection);
                 command.Parameters.AddWithValue("@email", email);
                 command.Parameters.AddWithValue("@numconfir", n);
                 command.Parameters.AddWithValue("@confirmado", true);
@@ -124,47 +138,5 @@ namespace Lab3_Datos
                 return -1;
             }
         }
-
-        //public Usuario getUsuarioDB(string email)
-        //{
-        //    try
-        //    {
-        //        SqlConnection connection = new SqlConnection();
-               
-        //        connection.ConnectionString = "Data Source=tcp:hads14j.database.windows.net,1433;Initial Catalog=hads;Persist Security Info=True;User ID=jon;Password=Hads1422";
-        //        connection.Open();
-
-        //        var command = new SqlCommand("SELECT * FROM Usuarios WHERE email=@email", connection);
-
-        //        command.Parameters.AddWithValue("@email", email);
-        //        if (command.ExecuteReader().HasRows)
-        //        {
-        //            SqlDataReader reader = command.ExecuteReader();
-        //            reader.Read();
-        //            Usuario u = new Usuario();
-        //            u.email = reader.GetString(0);
-        //            u.nombre = reader.GetString(1);
-        //            u.apellidos = reader.GetString(2);
-        //            u.numconfir = reader.GetInt32(3);
-        //            u.confirmado = reader.GetBoolean(4);
-        //            u.tipo = reader.GetString(5);
-        //            u.pass = reader.GetString(6);
-        //            u.codpass = reader.GetInt32(7);
-        //            connection.Close();
-        //            return u;
-        //        }
-        //        else
-        //        {
-        //            connection.Close();
-        //            return null;
-        //        }
-
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Console.WriteLine(e.Message);
-        //        return null;
-        //    }
-        //}
     }
 }
