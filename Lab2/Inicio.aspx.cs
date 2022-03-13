@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace Lab2
 {
-    public partial class Inicio : System.Web.UI.Page
+    public partial class Inicio1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,16 +32,16 @@ namespace Lab2
             {
                 error.Text = "Algo salió mal";
             }
-            else if(resul == -2)
+            else if (resul == -2)
             {
                 error.Text = "Usuario o contraseña incorrecto.";
             }
-            else if(resul == 0)
+            else if (resul == 0)
             {
                 Session["user"] = txtEmail.Text;
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Bienvenido! " + Session["user"] + "'); location.href='Alumno/Alumno.aspx'", true);
             }
-            else if(resul == 1)
+            else if (resul == 1)
             {
                 Session["user"] = txtEmail.Text;
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Bienvenido! " + Session["user"] + "'); location.href='Profesor/Profesor.aspx'", true);

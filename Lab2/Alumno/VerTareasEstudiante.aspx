@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VerTareasEstudiante.aspx.cs" Inherits="Lab2.Alumno.VerTareasEstudiante" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VerTareasEstudiante.aspx.cs" Inherits="Lab2.Alumno.VerTareasEstudiante1" %>
 
 <!DOCTYPE html>
 
@@ -18,6 +18,9 @@
             selecttext="Instanciar" ButtonType="Button"/>
             </Columns>
         </asp:GridView>
+        </br>
+        <a href="Alumno.aspx">Volver</a><br />
+        </br>
         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Cerrar Sesion</asp:LinkButton>
     </form>
     

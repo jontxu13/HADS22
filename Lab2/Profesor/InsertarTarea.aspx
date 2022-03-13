@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InsertarTarea.aspx.cs" Inherits="Lab2.Profesor.InsertarTarea" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InsertarTarea.aspx.cs" Inherits="Lab2.Profesor.InsertarTarea1" %>
 
 <!DOCTYPE html>
 
@@ -36,7 +36,7 @@
         <asp:Button ID="btnAñadir" runat="server" Text="Añadir Tarea" OnClick="btnAñadir_Click" />
         </br>
         </br>
-        <a href="GestionarTareas.aspx">Ver Tareas</a><br />
+        <a href="VerTareasProfesor.aspx">Ver Tareas</a><br />
         </br>
         <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton1_Click">Cerrar Sesion</asp:LinkButton>
     </form>

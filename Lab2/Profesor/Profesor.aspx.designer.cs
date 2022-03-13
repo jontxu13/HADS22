@@ -11,7 +11,7 @@ namespace Lab2.Profesor
 {
 
 
-    public partial class Profesor
+    public partial class Profesor1
     {
 
         /// <summary>

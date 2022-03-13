@@ -11,7 +11,7 @@ namespace Lab2.Alumno
 {
 
 
-    public partial class InstanciarTarea
+    public partial class InstanciarTarea1
     {
 
         /// <summary>

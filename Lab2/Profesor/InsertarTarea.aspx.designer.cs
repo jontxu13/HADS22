@@ -11,7 +11,7 @@ namespace Lab2.Profesor
 {
 
 
-    public partial class InsertarTarea
+    public partial class InsertarTarea1
     {
 
         /// <summary>

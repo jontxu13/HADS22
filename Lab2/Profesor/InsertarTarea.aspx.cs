@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace Lab2.Profesor
 {
-    public partial class InsertarTarea : System.Web.UI.Page
+    public partial class InsertarTarea1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,7 +20,7 @@ namespace Lab2.Profesor
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Hasta pronto!'); location.href='Inicio.aspx'", true);
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Hasta pronto!'); location.href='../Inicio.aspx'", true);
             Session.Abandon();
         }
 

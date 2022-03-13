@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VerTareasProfesor.aspx.cs" Inherits="Lab2.Profesor.VerTareasProfesor" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VerTareasProfesor.aspx.cs" Inherits="Lab2.Profesor.VerTareasProfesor1" %>
 
 <!DOCTYPE html>
 
@@ -38,6 +38,7 @@
 				</p>
         <p>
             &nbsp;</p>
+        <a href="Profesor.aspx">Volver</a><br />
         </br>
         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Cerrar Sesion</asp:LinkButton>
     </form>

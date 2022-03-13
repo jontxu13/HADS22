@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace Lab2
 {
-    public partial class Confirmar : System.Web.UI.Page
+    public partial class Confirmar1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

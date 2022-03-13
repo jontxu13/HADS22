@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace Lab2.Alumno
 {
-    public partial class VerTareasEstudiante : System.Web.UI.Page
+    public partial class VerTareasEstudiante1 : System.Web.UI.Page
     {
         SqlConnection connection = new SqlConnection("Data Source=tcp:hads14j.database.windows.net,1433;Initial Catalog=hads;Persist Security Info=True;User ID=jon;Password=Hads1422");
         SqlDataAdapter dapTareas = new SqlDataAdapter();
@@ -76,7 +76,7 @@ namespace Lab2.Alumno
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Hasta pronto!'); location.href='Inicio.aspx'", true);
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Hasta pronto!'); location.href='../Inicio.aspx'", true);
             Session.Abandon();
         }
 
