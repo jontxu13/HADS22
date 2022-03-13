@@ -18,7 +18,7 @@ namespace Lab2.Profesor
         }
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Hasta pronto!'); location.href='Inicio.aspx'", true);
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Hasta pronto!'); location.href='../Inicio.aspx'", true);
             Session.Abandon();
         }
 
