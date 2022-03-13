@@ -29,6 +29,8 @@
        <asp:GridView ID="GridView1" runat="server"></asp:GridView>
         </br>
         <a href="VerTareasEstudiante.aspx">Página anterior</a><br />
+       </br>
+       <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Cerrar Sesion</asp:LinkButton>
     </form>
 </body>
 </html>

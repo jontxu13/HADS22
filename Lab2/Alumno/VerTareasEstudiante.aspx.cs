@@ -30,7 +30,7 @@ namespace Lab2.Alumno
                 tblTareas = null;
                 dstAsig = (DataSet)Session["datosAsig"];
 
-                dapTareas = new SqlDataAdapter("select codigo, descripcion, codAsig, hEstimadas, tipoTarea from TareaGenerica where codAsig = '" + DropDownList1.SelectedValue + "';", connection);
+                dapTareas = new SqlDataAdapter("select codigo, descripcion, codAsig, hEstimadas, tipoTarea from TareaGenerica where (codAsig = '" + DropDownList1.SelectedValue + "' AND explotacion = 'True');", connection);
                 SqlCommandBuilder bldTareas = new SqlCommandBuilder(dapTareas);
 
                 dapTareas.Fill(dstTareas, "Tareas");
