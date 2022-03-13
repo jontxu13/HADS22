@@ -6,20 +6,29 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Lab2
+namespace Lab2.Profesor
 {
-    public partial class InstanciarTarea : System.Web.UI.Page
+    public partial class InsertarTarea : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["user"] == null)
+            {
+                Response.Redirect("../Inicio.aspx");
+            }
+        }
 
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Hasta pronto!'); location.href='Inicio.aspx'", true);
+            Session.Abandon();
         }
 
         protected void btnAñadir_Click(object sender, EventArgs e)
         {
             BL bl = new BL();
 
-            int resul = bl.insertarTarea(txtCodigo.Text, txtDes.Text, )
+            int resul = bl.insertarTarea(txtCodigo.Text, txtDes.Text, dplAsignatura.SelectedValue, Convert.ToInt32(txtHestimadas.Text), dplTipoTarea.SelectedValue);
 
             if (resul == -1)
             {

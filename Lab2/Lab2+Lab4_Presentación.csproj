@@ -67,23 +67,39 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Profesor\Profesor.aspx" />
+    <Content Include="Alumno\Alumno.aspx" />
+    <Content Include="Alumno\InstanciarTarea.aspx" />
+    <Content Include="Alumno\VerTareasEstudiante.aspx" />
     <Content Include="CambiarPassword.aspx" />
     <Content Include="Confirmar.aspx" />
     <Content Include="Inicio.aspx" />
-    <Content Include="Profesor\InstanciarTarea.aspx" />
+    <Content Include="Profesor\InsertarTarea.aspx" />
+    <Content Include="Profesor\Profesor.aspx" />
+    <Content Include="Profesor\VerTareasProfesor.aspx" />
     <Content Include="Registro.aspx" />
-    <Content Include="Profesor\GestionarTareas.aspx" />
     <Content Include="Web.config" />
-    <Content Include="Welcome.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Profesor\Profesor.aspx.cs">
-      <DependentUpon>Profesor.aspx</DependentUpon>
+    <Compile Include="Alumno\Alumno.aspx.cs">
+      <DependentUpon>Alumno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Profesor\Profesor.aspx.designer.cs">
-      <DependentUpon>Profesor.aspx</DependentUpon>
+    <Compile Include="Alumno\Alumno.aspx.designer.cs">
+      <DependentUpon>Alumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alumno\InstanciarTarea.aspx.cs">
+      <DependentUpon>InstanciarTarea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alumno\InstanciarTarea.aspx.designer.cs">
+      <DependentUpon>InstanciarTarea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alumno\VerTareasEstudiante.aspx.cs">
+      <DependentUpon>VerTareasEstudiante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alumno\VerTareasEstudiante.aspx.designer.cs">
+      <DependentUpon>VerTareasEstudiante.aspx</DependentUpon>
     </Compile>
     <Compile Include="CambiarPassword.aspx.cs">
       <DependentUpon>CambiarPassword.aspx</DependentUpon>
@@ -106,12 +122,26 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Profesor\InstanciarTarea.aspx.cs">
-      <DependentUpon>InstanciarTarea.aspx</DependentUpon>
+    <Compile Include="Profesor\InsertarTarea.aspx.cs">
+      <DependentUpon>InsertarTarea.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Profesor\InstanciarTarea.aspx.designer.cs">
-      <DependentUpon>InstanciarTarea.aspx</DependentUpon>
+    <Compile Include="Profesor\InsertarTarea.aspx.designer.cs">
+      <DependentUpon>InsertarTarea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesor\Profesor.aspx.cs">
+      <DependentUpon>Profesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profesor\Profesor.aspx.designer.cs">
+      <DependentUpon>Profesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesor\VerTareasProfesor.aspx.cs">
+      <DependentUpon>VerTareasProfesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profesor\VerTareasProfesor.aspx.designer.cs">
+      <DependentUpon>VerTareasProfesor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registro.aspx.cs">
@@ -120,20 +150,6 @@
     </Compile>
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Profesor\GestionarTareas.aspx.cs">
-      <DependentUpon>GestionarTareas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Profesor\GestionarTareas.aspx.designer.cs">
-      <DependentUpon>GestionarTareas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Welcome.aspx.cs">
-      <DependentUpon>Welcome.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Welcome.aspx.designer.cs">
-      <DependentUpon>Welcome.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

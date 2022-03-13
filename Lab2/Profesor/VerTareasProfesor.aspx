@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GestionarTareas.aspx.cs" Inherits="Lab2.VerTareasEstudiante" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VerTareasProfesor.aspx.cs" Inherits="Lab2.Profesor.VerTareasProfesor" %>
 
 <!DOCTYPE html>
 
@@ -9,6 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <h1>Profesor: Gestión de tareas genéricas</h1>
                 <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="codigoAsig" DataValueField="codigoAsig" AutoPostBack="True">
         </asp:DropDownList>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:hadsConnectionString %>" SelectCommand= "SELECT [codigoAsig] FROM [GrupoClase] INNER JOIN [ProfesorGrupo] ON GrupoClase.codigo = ProfesorGrupo.codigoGrupo WHERE ([email] = @email)">
@@ -19,7 +20,6 @@
         
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource2" Width="738px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" DataKeyNames="codigo">
             <Columns>
-                <asp:CommandField HeaderText="Editar" SelectText="Editar" ShowSelectButton="True" />
                 <asp:BoundField DataField="codigo" HeaderText="codigo" SortExpression="codigo" ReadOnly="True" />
                 <asp:BoundField DataField="descripcion" HeaderText="descripcion" SortExpression="descripcion" />
                 <asp:BoundField DataField="codAsig" HeaderText="codAsig" SortExpression="codAsig" />
@@ -33,6 +33,13 @@
                         <asp:ControlParameter ControlID="DropDownList1" Name="codAsig" PropertyName="SelectedValue" Type="String" />
                     </SelectParameters>
                 </asp:SqlDataSource>
+    			<p>
+					<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insertar nueva tarea" />
+				</p>
+        <p>
+            &nbsp;</p>
+        </br>
+        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Cerrar Sesion</asp:LinkButton>
     </form>
 </body>
 </html>

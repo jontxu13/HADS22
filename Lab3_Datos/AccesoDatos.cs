@@ -149,7 +149,7 @@ namespace Lab3_Datos
                 command.Parameters.AddWithValue("@codigo", codigo);
                 command.Parameters.AddWithValue("@descripcion", descripcion);
                 command.Parameters.AddWithValue("@codAsig", codAsig);
-                command.Parameters.AddWithValue("@hEstimada", horas);
+                command.Parameters.AddWithValue("@hEstimadas", horas);
                 command.Parameters.AddWithValue("@explotacion", false);
                 command.Parameters.AddWithValue("@tipoTarea", tipoTarea);
 
@@ -165,5 +165,33 @@ namespace Lab3_Datos
                 return -1;
             }
         }
+        public int instanciarTarea(string email, string tarea, int hEstimadas, int hReales)
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection();
+                connection.ConnectionString = "Data Source=tcp:hads14j.database.windows.net,1433;Initial Catalog=hads;Persist Security Info=True;User ID=jon;Password=Hads1422";
+                connection.Open();
+
+                var command = new SqlCommand("INSERT INTO EstudianteTarea VALUES(@email, @codTarea, @hEstimadas, @hReales)", connection);
+
+                command.Parameters.AddWithValue("@email", email);
+                command.Parameters.AddWithValue("@codTarea", tarea);
+                command.Parameters.AddWithValue("@hEstimadas", hEstimadas);
+                command.Parameters.AddWithValue("@hReales", hReales);
+
+                command.ExecuteNonQuery();
+
+                connection.Close();
+
+                return 0;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return -1;
+            }
+        }
+
     }
 }

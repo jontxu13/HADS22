@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Profesor.aspx.cs" Inherits="Lab2.Alumno" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Profesor.aspx.cs" Inherits="Lab2.Profesor.Profesor" %>
 
 <!DOCTYPE html>
 
@@ -11,12 +11,14 @@
     <form id="form1" runat="server">
         <div>
             <a href="#">Asignaturas</a><br />
-            <a href="GestionarTareas.aspx">Tareas</a><br />
+            <a href="VerTareasProfesor.aspx">Tareas</a><br />
             <a href="#">Grupos</a><br />
             <a href="#">Importar v. XMLDocument</a><br />
             <a href="#">Exportar</a><br />
             <a href="#">Importar v. DataSet</a><br />
         </div>
+        </br>
+        <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton1_Click">Cerrar Sesion</asp:LinkButton>
     </form>
 </body>
 </html>

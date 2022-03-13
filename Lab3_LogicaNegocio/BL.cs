@@ -32,5 +32,10 @@ namespace Lab3_LogicaNegocio
         {
             return da.insertarTarea(codigo, descripcion, codAsig, horas, tipoTarea);
         }
+
+        public int instanciarTarea(string email, string tarea, int hEstimadas, int hReales)
+        {
+            return da.instanciarTarea(email, tarea, hEstimadas, hReales);
+        }
     }
 }
