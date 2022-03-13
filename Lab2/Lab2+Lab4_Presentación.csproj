@@ -12,7 +12,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Lab2</RootNamespace>
-    <AssemblyName>Lab2</AssemblyName>
+    <AssemblyName>Lab2+Lab4_Presentación</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -67,23 +67,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Alumno\Alumno.aspx" />
+    <Content Include="Profesor\Profesor.aspx" />
     <Content Include="CambiarPassword.aspx" />
     <Content Include="Confirmar.aspx" />
     <Content Include="Inicio.aspx" />
-    <Content Include="Alumno\InstanciarTarea.aspx" />
+    <Content Include="Profesor\InstanciarTarea.aspx" />
     <Content Include="Registro.aspx" />
-    <Content Include="Alumno\VerTareasEstudiante.aspx" />
+    <Content Include="Profesor\GestionarTareas.aspx" />
     <Content Include="Web.config" />
     <Content Include="Welcome.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alumno\Alumno.aspx.cs">
-      <DependentUpon>Alumno.aspx</DependentUpon>
+    <Compile Include="Profesor\Profesor.aspx.cs">
+      <DependentUpon>Profesor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Alumno\Alumno.aspx.designer.cs">
-      <DependentUpon>Alumno.aspx</DependentUpon>
+    <Compile Include="Profesor\Profesor.aspx.designer.cs">
+      <DependentUpon>Profesor.aspx</DependentUpon>
     </Compile>
     <Compile Include="CambiarPassword.aspx.cs">
       <DependentUpon>CambiarPassword.aspx</DependentUpon>
@@ -106,11 +106,11 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Alumno\InstanciarTarea.aspx.cs">
+    <Compile Include="Profesor\InstanciarTarea.aspx.cs">
       <DependentUpon>InstanciarTarea.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Alumno\InstanciarTarea.aspx.designer.cs">
+    <Compile Include="Profesor\InstanciarTarea.aspx.designer.cs">
       <DependentUpon>InstanciarTarea.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -121,12 +121,12 @@
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Alumno\VerTareasEstudiante.aspx.cs">
-      <DependentUpon>VerTareasEstudiante.aspx</DependentUpon>
+    <Compile Include="Profesor\GestionarTareas.aspx.cs">
+      <DependentUpon>GestionarTareas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Alumno\VerTareasEstudiante.aspx.designer.cs">
-      <DependentUpon>VerTareasEstudiante.aspx</DependentUpon>
+    <Compile Include="Profesor\GestionarTareas.aspx.designer.cs">
+      <DependentUpon>GestionarTareas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Welcome.aspx.cs">
       <DependentUpon>Welcome.aspx</DependentUpon>

@@ -84,23 +84,20 @@ namespace Lab3_Datos
                 command.Parameters.AddWithValue("@email", email);
                 command.Parameters.AddWithValue("@pass", pass);
                 command.ExecuteNonQuery();
-                if (command.ExecuteReader().HasRows)
+                var reader = command.ExecuteReader();
+                if (reader.HasRows)
                 {
-                    //var reader = command.ExecuteReader();
-                    //reader.Read();
-                    //if (Convert.ToString(reader[5]) == "Alumno")
-                    //{
-                    //    connection.Close();
-                    //    return 0;
-                    //}
-                    //else
-                    //{
-                    //    connection.Close();
-                    //    return 1;
-                    //}
-
-                    return 0;
-                    
+                    reader.Read();
+                    if (Convert.ToString(reader[5]) == "Alumno")
+                    {
+                        connection.Close();
+                        return 0;
+                    }
+                    else
+                    {
+                        connection.Close();
+                        return 1;
+                    }
                 }
                 else
                 {
@@ -131,6 +128,36 @@ namespace Lab3_Datos
                 connection.Close();
                 return 0;
 
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return -1;
+            }
+        }
+
+        public int insertarTarea(string codigo, string descripcion, string codAsig, int horas, string tipoTarea)
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection();
+                connection.ConnectionString = "Data Source=tcp:hads14j.database.windows.net,1433;Initial Catalog=hads;Persist Security Info=True;User ID=jon;Password=Hads1422";
+                connection.Open();
+
+                var command = new SqlCommand("INSERT INTO TareaGenerica VALUES(@codigo, @descripcion, @codAsig, @hEstimadas, @explotacion, @tipoTarea)", connection);
+
+                command.Parameters.AddWithValue("@codigo", codigo);
+                command.Parameters.AddWithValue("@descripcion", descripcion);
+                command.Parameters.AddWithValue("@codAsig", codAsig);
+                command.Parameters.AddWithValue("@hEstimada", horas);
+                command.Parameters.AddWithValue("@explotacion", false);
+                command.Parameters.AddWithValue("@tipoTarea", tipoTarea);
+
+                command.ExecuteNonQuery();
+
+                connection.Close();
+
+                return 0;
             }
             catch (Exception e)
             {

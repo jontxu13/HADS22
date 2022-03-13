@@ -16,11 +16,7 @@ namespace Lab2
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var Tarea = GridView1.SelectedRow.Cells[1].Text;
-            var Horas = GridView1.SelectedRow.Cells[3].Text;
-            var Usuario = Session["user"];
-
-            Response.Redirect("Alumno/InstanciarTarea.aspx?Usuario=" + Usuario + "&Tarea=" + Tarea + "&Horas=" + Horas);
+            Response.Redirect("Profesor/InsertarTarea.aspx");
         }
     }
 }
