@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net.Mail;
 using Lab3_Datos;
 using Lab3_Dominio;
+using System.Data.SqlClient;
 
 namespace Lab3_LogicaNegocio
 {
@@ -36,6 +37,11 @@ namespace Lab3_LogicaNegocio
         public int instanciarTarea(string email, string tarea, int hEstimadas, int hReales)
         {
             return da.instanciarTarea(email, tarea, hEstimadas, hReales);
+        }
+
+        public SqlDataAdapter obtenerTablaAdapter(string tabla, string where)
+        {
+            return da.obtenerTablaAdapter(tabla, where);
         }
     }
 }

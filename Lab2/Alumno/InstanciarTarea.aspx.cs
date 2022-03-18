@@ -12,8 +12,7 @@ namespace Lab2.Alumno
 {
     public partial class InstanciarTarea1 : System.Web.UI.Page
     {
-        SqlConnection connection = new SqlConnection("Data Source=tcp:hads14j.database.windows.net,1433;Initial Catalog=hads;Persist Security Info=True;User ID=jon;Password=Hads1422");
-        SqlDataAdapter dapTareas = new SqlDataAdapter();
+        BL bl = new BL();
         DataSet dstTareas = new DataSet();
         DataTable tblTareas = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
@@ -27,7 +26,7 @@ namespace Lab2.Alumno
             txtTarea.Text = Request.Params["Tarea"];
             txtHestimadas.Text = Request.Params["Horas"];
 
-                dapTareas = new SqlDataAdapter("select email, codTarea, hEstimadas, hReales from EstudianteTarea where email = '" + Session["user"] + "';", connection);
+                SqlDataAdapter dapTareas = bl.obtenerTablaAdapter("EstudianteTarea", "email = '" + Session["user"] + "'");
                 SqlCommandBuilder bldTareas = new SqlCommandBuilder(dapTareas);
 
                 dapTareas.Fill(dstTareas, "Tareas");
