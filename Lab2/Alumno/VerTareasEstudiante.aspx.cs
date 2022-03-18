@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lab3_LogicaNegocio;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -14,6 +15,7 @@ namespace Lab2.Alumno
         SqlConnection connection = new SqlConnection("Data Source=tcp:hads14j.database.windows.net,1433;Initial Catalog=hads;Persist Security Info=True;User ID=jon;Password=Hads1422");
         SqlDataAdapter dapTareas = new SqlDataAdapter();
         SqlDataAdapter dapAsig = new SqlDataAdapter();
+        BL bl = new BL();
         DataSet dstTareas = new DataSet();
         DataSet dstAsig = new DataSet();
         DataTable tblTareas = new DataTable();
@@ -30,8 +32,7 @@ namespace Lab2.Alumno
                 tblTareas = null;
                 dstAsig = (DataSet)Session["datosAsig"];
 
-                dapTareas = new SqlDataAdapter("select codigo, descripcion, codAsig, hEstimadas, tipoTarea from TareaGenerica where (codAsig = '" + DropDownList1.SelectedValue + "' AND explotacion = 'True');", connection);
-                SqlCommandBuilder bldTareas = new SqlCommandBuilder(dapTareas);
+                dapTareas = bl.obtenerTablaAdapter("TareaGenerica","(codAsig = '" + DropDownList1.SelectedValue + "' AND explotacion = 'True');");
 
                 dapTareas.Fill(dstTareas, "Tareas");
                 tblTareas = dstTareas.Tables["Tareas"];
@@ -43,7 +44,7 @@ namespace Lab2.Alumno
             }
             else
             {
-                dapAsig = new SqlDataAdapter("SELECT GrupoClase.codigoasig FROM GrupoClase INNER JOIN EstudianteGrupo ON GrupoClase.codigo = EstudianteGrupo.Grupo WHERE EstudianteGrupo.Email ='" + Session["user"] + "';", connection);
+                dapAsig = bl.obtenerTablaAdapter("GrupoClase INNER JOIN EstudianteGrupo ON GrupoClase.codigo = EstudianteGrupo.Grupo", "EstudianteGrupo.Email ='" + Session["user"] + "';");
                 SqlCommandBuilder bldAsig = new SqlCommandBuilder(dapAsig);
 
                 dapAsig.Fill(dstAsig, "Asignaturas");
@@ -55,8 +56,7 @@ namespace Lab2.Alumno
                 Session["datosAsign"] = dstAsig;
                 Session["adaptadorAsig"] = dapAsig;
 
-                dapTareas = new SqlDataAdapter("select codigo, descripcion, codAsig, hEstimadas, tipoTarea from TareaGenerica where codAsig = '"+ DropDownList1.SelectedValue + "';", connection);
-                SqlCommandBuilder bldTareas = new SqlCommandBuilder(dapTareas);
+                dapTareas = bl.obtenerTablaAdapter("TareaGenerica", "(codAsig = '" + DropDownList1.SelectedValue + "' AND explotacion = 'True');");
 
                 dapTareas.Fill(dstTareas, "Tareas");
                 tblTareas = dstTareas.Tables["Tareas"];
