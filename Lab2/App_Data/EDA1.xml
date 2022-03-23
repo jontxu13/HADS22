@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="yes"?>
+<tareas>
+  <tarea codigo="EDA20-Ej1">
+    <descripcion>Ejercicio sobre listas ligadas</descripcion>
+    <codAsig>EDA1</codAsig>
+    <hEstimadas>3</hEstimadas>
+    <explotacion>true</explotacion>
+    <tipoTarea>Ejercicio</tipoTarea>
+  </tarea>
+  <tarea codigo="EDA20-Ex1">
+    <descripcion>examen</descripcion>
+    <codAsig>EDA1</codAsig>
+    <hEstimadas>12</hEstimadas>
+    <explotacion>true</explotacion>
+    <tipoTarea>Examen</tipoTarea>
+  </tarea>
+  <tarea codigo="EDA20-Ex2">
+    <descripcion>examen</descripcion>
+    <codAsig>EDA1</codAsig>
+    <hEstimadas>3</hEstimadas>
+    <explotacion>true</explotacion>
+    <tipoTarea>Examen</tipoTarea>
+  </tarea>
+</tareas>

@@ -18,7 +18,7 @@
             </SelectParameters>
         </asp:SqlDataSource>
         
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource2" Width="738px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" DataKeyNames="codigo">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource2" Width="738px" DataKeyNames="codigo" AutoGenerateEditButton="True">
             <Columns>
                 <asp:BoundField DataField="codigo" HeaderText="codigo" SortExpression="codigo" ReadOnly="True" />
                 <asp:BoundField DataField="descripcion" HeaderText="descripcion" SortExpression="descripcion" />
@@ -28,10 +28,18 @@
                 <asp:BoundField DataField="tipoTarea" HeaderText="tipoTarea" SortExpression="tipoTarea" />
             </Columns>
         </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:hadsConnectionString %>" SelectCommand="SELECT [codigo], [descripcion], [codAsig], [hEstimadas], [explotacion], [tipoTarea] FROM [TareaGenerica] WHERE ([codAsig] = @codAsig)">
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:hadsConnectionString %>" SelectCommand="SELECT [codigo], [descripcion], [codAsig], [hEstimadas], [explotacion], [tipoTarea] FROM [TareaGenerica] WHERE ([codAsig] = @codAsig)" UpdateCommand="UPDATE TareaGenerica SET codigo = @codigo, descripcion = @descripcion, codAsig = @codAsig, hEstimadas = @hEstimadas, explotacion = @explotacion, tipoTarea = @tipoTarea WHERE codigo = @codigo">
                     <SelectParameters>
                         <asp:ControlParameter ControlID="DropDownList1" Name="codAsig" PropertyName="SelectedValue" Type="String" />
                     </SelectParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="codigo" />
+                        <asp:Parameter Name="descripcion" />
+                        <asp:Parameter Name="codAsig" />
+                        <asp:Parameter Name="hEstimadas" />
+                        <asp:Parameter Name="explotacion" />
+                        <asp:Parameter Name="tipoTarea" />
+                    </UpdateParameters>
                 </asp:SqlDataSource>
     			<p>
 					<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Insertar nueva tarea" />

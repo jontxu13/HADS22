@@ -17,11 +17,6 @@ namespace Lab2.Profesor
             }
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Response.Redirect("Profesor/GestionarTarea.aspx");
-        }
-
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect("InsertarTarea.aspx");

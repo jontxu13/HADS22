@@ -3,14 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml;
 
-namespace Lab2.Alumno
+namespace Lab2.Profesor
 {
-    public partial class VerTareasEstudiante1 : System.Web.UI.Page
+    public partial class ExportarTareas : System.Web.UI.Page
     {
         SqlDataAdapter dapTareas = new SqlDataAdapter();
         SqlDataAdapter dapAsig = new SqlDataAdapter();
@@ -20,7 +22,7 @@ namespace Lab2.Alumno
         DataTable tblTareas = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["user"]== null)
+            if (Session["user"] == null)
             {
                 Response.Redirect("../Inicio.aspx");
             }
@@ -30,7 +32,7 @@ namespace Lab2.Alumno
                 tblTareas = null;
                 dstAsig = (DataSet)Session["datosAsig"];
 
-                dapTareas = bl.obtenerTablaAdapter("TareaGenerica", "(codAsig = '" + DropDownList1.SelectedValue + "' AND explotacion = 'True');");
+                dapTareas = bl.obtenerTablaAdapter("TareaGenerica", "(codAsig = '" + DropDownList1.SelectedValue + "');");
 
                 dapTareas.Fill(dstTareas, "Tareas");
                 tblTareas = dstTareas.Tables["Tareas"];
@@ -42,7 +44,7 @@ namespace Lab2.Alumno
             }
             else
             {
-                dapAsig = bl.obtenerTablaAdapter("GrupoClase INNER JOIN EstudianteGrupo ON GrupoClase.codigo = EstudianteGrupo.Grupo", "EstudianteGrupo.Email ='" + Session["user"] + "';");
+                dapAsig = bl.obtenerTablaAdapter("[GrupoClase] INNER JOIN [ProfesorGrupo] ON GrupoClase.codigo = ProfesorGrupo.codigoGrupo", "email ='" + Session["user"] + "';");
 
                 dapAsig.Fill(dstAsig, "Asignaturas");
                 DropDownList1.DataSource = dstAsig;
@@ -53,7 +55,7 @@ namespace Lab2.Alumno
                 Session["datosAsign"] = dstAsig;
                 Session["adaptadorAsig"] = dapAsig;
 
-                dapTareas = bl.obtenerTablaAdapter("TareaGenerica", "(codAsig = '" + DropDownList1.SelectedValue + "' AND explotacion = 'True');");
+                dapTareas = bl.obtenerTablaAdapter("TareaGenerica", "(codAsig = '" + DropDownList1.SelectedValue + "');");
 
                 dapTareas.Fill(dstTareas, "Tareas");
                 tblTareas = dstTareas.Tables["Tareas"];
@@ -66,23 +68,22 @@ namespace Lab2.Alumno
             }
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
         {
-            // Response.Redirect("Alumno/InstanciarTarea.aspx");
+            dstTareas.DataSetName = "tareas";
+            tblTareas.TableName = "tarea";
+            tblTareas.Columns[0].ColumnMapping = MappingType.Attribute;
+
+            dstTareas.WriteXml(Server.MapPath("../App_Data/" + DropDownList1.SelectedValue + ".xml"));
+            XmlDocument xml = new XmlDocument();
+            xml.Load(Server.MapPath("../App_Data/" + DropDownList1.SelectedValue + ".xml"));
+            error.Text = "Tareas exportadas correctamente en el archivo " + DropDownList1.SelectedValue + ".xml";
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Hasta pronto!'); location.href='../Inicio.aspx'", true);
             Session.Abandon();
-        }
-
-        protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
-        {
-            var Tarea = GridView1.SelectedRow.Cells[1].Text;
-            var Horas = GridView1.SelectedRow.Cells[4].Text;
-
-            Response.Redirect("InstanciarTarea.aspx?Usuario=" + Session["user"] + "&Tarea=" + Tarea + "&Horas=" + Horas);
         }
     }
 }

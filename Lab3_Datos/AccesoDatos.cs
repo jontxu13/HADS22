@@ -199,9 +199,17 @@ namespace Lab3_Datos
             {
                 SqlConnection connection = new SqlConnection("Data Source=tcp:hads14j.database.windows.net,1433;Initial Catalog=hads;Persist Security Info=True;User ID=jon;Password=Hads1422");
                 SqlDataAdapter dapTareas = new SqlDataAdapter();
-                SqlDataAdapter adapter = new SqlDataAdapter("select * from " + tabla +  " where " + where + ";", connection);
-
-                return adapter;
+                if (where != "")
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter("select * from " + tabla + " where " + where + ";", connection);
+                    return adapter;
+                }
+                else
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter("select * from " + tabla + ";", connection);
+                    return adapter;
+                }
+                
             }
             catch (Exception e)
             {
