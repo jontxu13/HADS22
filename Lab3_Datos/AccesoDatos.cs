@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Net.Mail;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,6 +46,7 @@ namespace Lab3_Datos
 
                 Usuario u = new Usuario(email, nombre, apellidos, tipo, pass);
                 u.numconfir = u.generarNumero();
+                u.pass = encriptar(pass);
 
                 var command = new SqlCommand("INSERT INTO Usuario VALUES(@email, @nombre, @apellidos, @numconfir, @confirmado, @tipo, @pass, @codpass)", connection);
 
@@ -216,6 +218,27 @@ namespace Lab3_Datos
                 Console.WriteLine(e.Message);
                 return null;
             }
+        }
+
+        public static string encriptar(string text)
+        {
+            MD5 md5 = new MD5CryptoServiceProvider();
+
+            //Pasar a hash los bytes del texto 
+            md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(text));
+
+            //Obtener el hash 
+            byte[] result = md5.Hash;
+
+            StringBuilder strBuilder = new StringBuilder();
+            for (int i = 0; i < result.Length; i++)
+            {
+                //Cambiar a 2 digitos hexadecimales 
+                //por cada byte
+                strBuilder.Append(result[i].ToString("x2"));
+            }
+
+            return strBuilder.ToString();
         }
 
     }
