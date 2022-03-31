@@ -80,11 +80,11 @@ namespace Lab3_Datos
                 SqlConnection connection = new SqlConnection();
                 connection.ConnectionString = "Data Source=tcp:hads14j.database.windows.net,1433;Initial Catalog=hads;Persist Security Info=True;User ID=jon;Password=Hads1422";
                 connection.Open();
-
+                var passE = encriptar(pass);
                 var command = new SqlCommand("SELECT * FROM Usuario WHERE email=@email and pass=@pass", connection);
 
                 command.Parameters.AddWithValue("@email", email);
-                command.Parameters.AddWithValue("@pass", pass);
+                command.Parameters.AddWithValue("@pass", passE);
                 command.ExecuteNonQuery();
                 var reader = command.ExecuteReader();
                 if (reader.HasRows)

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -39,12 +40,23 @@ namespace Lab2
             else if (resul == 0)
             {
                 Session["user"] = txtEmail.Text;
+                FormsAuthentication.SetAuthCookie("Alumno", true);
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Bienvenido! " + Session["user"] + "'); location.href='Alumno/Alumno.aspx'", true);
             }
             else if (resul == 1)
             {
-                Session["user"] = txtEmail.Text;
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Bienvenido! " + Session["user"] + "'); location.href='Profesor/Profesor.aspx'", true);
+                if (txtEmail.Text == "vadillo@ehu.es")
+                {
+                    Session["user"] = txtEmail.Text;
+                    FormsAuthentication.SetAuthCookie("Coordinador", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Bienvenido! " + Session["user"] + "'); location.href='Profesor/Profesor.aspx'", true);
+                }
+                else
+                {
+                    Session["user"] = txtEmail.Text;
+                    FormsAuthentication.SetAuthCookie("Profesor", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Bienvenido! " + Session["user"] + "'); location.href='Profesor/Profesor.aspx'", true);
+                }
             }
         }
     }

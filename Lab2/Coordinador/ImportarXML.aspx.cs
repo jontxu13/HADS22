@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
@@ -93,6 +94,7 @@ namespace Lab2.Profesor
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Hasta pronto!'); location.href='../Inicio.aspx'", true);
+            FormsAuthentication.SignOut();
             Session.Abandon();
         }
 

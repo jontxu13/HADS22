@@ -76,8 +76,8 @@
     <Content Include="CambiarPassword.aspx" />
     <Content Include="Confirmar.aspx" />
     <Content Include="Inicio.aspx" />
-    <Content Include="Profesor\ExportarTareas.aspx" />
-    <Content Include="Profesor\ImportarXML.aspx" />
+    <Content Include="Coordinador\ExportarTareas.aspx" />
+    <Content Include="Coordinador\ImportarXML.aspx" />
     <Content Include="Profesor\InsertarTarea.aspx" />
     <Content Include="Profesor\Profesor.aspx" />
     <Content Include="Profesor\VerTareasProfesor.aspx" />
@@ -127,18 +127,18 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Profesor\ExportarTareas.aspx.cs">
+    <Compile Include="Coordinador\ExportarTareas.aspx.cs">
       <DependentUpon>ExportarTareas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Profesor\ExportarTareas.aspx.designer.cs">
+    <Compile Include="Coordinador\ExportarTareas.aspx.designer.cs">
       <DependentUpon>ExportarTareas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Profesor\ImportarXML.aspx.cs">
+    <Compile Include="Coordinador\ImportarXML.aspx.cs">
       <DependentUpon>ImportarXML.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Profesor\ImportarXML.aspx.designer.cs">
+    <Compile Include="Coordinador\ImportarXML.aspx.designer.cs">
       <DependentUpon>ImportarXML.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profesor\InsertarTarea.aspx.cs">

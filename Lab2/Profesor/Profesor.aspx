@@ -13,8 +13,8 @@
             <a href="#">Asignaturas</a><br />
             <a href="VerTareasProfesor.aspx">Tareas</a><br />
             <a href="#">Grupos</a><br />
-            <a href="ImportarXML.aspx">Importar v. XMLDocument</a><br />
-            <a href="ExportarTareas.aspx">Exportar</a><br />
+            <a href="../Coordinador/ImportarXML.aspx">Importar v. XMLDocument</a><br />
+            <a href="../Coordinador/ExportarTareas.aspx">Exportar</a><br />
             <a href="#">Importar v. DataSet</a><br />
         </div>
         </br>
