@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="yes"?>
+<tareas>
+  <tarea codigo="prueba">
+    <descripcion>prueba</descripcion>
+    <codAsig>ADSI</codAsig>
+    <hEstimadas>5</hEstimadas>
+    <explotacion>false</explotacion>
+    <tipoTarea>Laboratorio</tipoTarea>
+  </tarea>
+  <tarea codigo="ADSi22">
+    <descripcion>asasdsadasda</descripcion>
+    <codAsig>ADSI</codAsig>
+    <hEstimadas>11</hEstimadas>
+    <explotacion>false</explotacion>
+    <tipoTarea>Laboratorio</tipoTarea>
+  </tarea>
+  <tarea codigo="prueba2">
+    <descripcion>prueba</descripcion>
+    <codAsig>ADSI</codAsig>
+    <hEstimadas>8</hEstimadas>
+    <explotacion>false</explotacion>
+    <tipoTarea>Laboratorio</tipoTarea>
+  </tarea>
+</tareas>
