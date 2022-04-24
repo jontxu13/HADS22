@@ -240,6 +240,5 @@ namespace Lab3_Datos
 
             return strBuilder.ToString();
         }
-
     }
 }

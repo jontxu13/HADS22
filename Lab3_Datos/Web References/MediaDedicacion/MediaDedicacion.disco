@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://hads22-14.azurewebsites.net/MediaDedicacion.asmx?wsdl" docRef="http://hads22-14.azurewebsites.net/MediaDedicacion.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://hads22-14.azurewebsites.net/MediaDedicacion.asmx" xmlns:q1="MediaDedidacion" binding="q1:MediaDedicacionSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://hads22-14.azurewebsites.net/MediaDedicacion.asmx" xmlns:q2="MediaDedidacion" binding="q2:MediaDedicacionSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

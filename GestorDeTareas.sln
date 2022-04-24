@@ -8,8 +8,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3_LogicaNegocio", "Lab3_LogicaNegocio\Lab3_LogicaNegocio.csproj", "{220C3318-EFD3-4F74-88EB-239A84891EDC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3_AccesoDatos", "Lab3_Datos\Lab3_AccesoDatos.csproj", "{AFF096A1-F391-402C-AA2F-7B05E5ACC64D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D3AA15CD-A724-418A-A1BC-D32CCFD387BB} = {D3AA15CD-A724-418A-A1BC-D32CCFD387BB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3_Dominio", "Lab3_Dominio\Lab3_Dominio.csproj", "{EB6DD5C1-2EDD-48CF-AE4C-76942BF2B09D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servicios Web", "Servicios Web\Servicios Web.csproj", "{D3AA15CD-A724-418A-A1BC-D32CCFD387BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +38,10 @@ Global
 		{EB6DD5C1-2EDD-48CF-AE4C-76942BF2B09D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB6DD5C1-2EDD-48CF-AE4C-76942BF2B09D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB6DD5C1-2EDD-48CF-AE4C-76942BF2B09D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3AA15CD-A724-418A-A1BC-D32CCFD387BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3AA15CD-A724-418A-A1BC-D32CCFD387BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3AA15CD-A724-418A-A1BC-D32CCFD387BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3AA15CD-A724-418A-A1BC-D32CCFD387BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

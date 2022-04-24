@@ -1,4 +1,5 @@
-﻿using Lab3_LogicaNegocio;
+﻿using Lab3_Datos.Matriculas;
+using Lab3_LogicaNegocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,23 @@ namespace Lab2
             else
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Registrado correctamente, revise su correo para la confirmación.'); location.href='Inicio.aspx'", true);
+            }
+        }
+
+        protected void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            Matriculas validar = new Matriculas();
+
+            if (validar.comprobar(txtEmail.Text)=="SI")
+            {
+                btnRegistrar.Enabled = true;
+                txtMatriculado.Text = "Correo válido";
+
+            }
+            else
+            {
+                btnRegistrar.Enabled = false;
+                txtMatriculado.Text = "Correo invádilo";
             }
         }
     }

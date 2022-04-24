@@ -7,16 +7,16 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F08762D4-669E-46E6-9A68-B75001DD6AD9}</ProjectGuid>
+    <ProjectGuid>{D3AA15CD-A724-418A-A1BC-D32CCFD387BB}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lab2</RootNamespace>
-    <AssemblyName>Lab2</AssemblyName>
+    <RootNamespace>Servicios_Web</RootNamespace>
+    <AssemblyName>Servicios Web</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44311</IISExpressSSLPort>
+    <IISExpressSSLPort>44359</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -67,132 +67,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Alumno\Alumno.aspx" />
-    <Content Include="Alumno\InstanciarTarea.aspx" />
-    <Content Include="Alumno\VerTareasEstudiante.aspx" />
-    <Content Include="App_Data\ADSI.xml" />
-    <Content Include="App_Data\HAS.xml" />
-    <Content Include="App_Data\ISO.xml" />
-    <Content Include="App_Data\SEG.xml" />
-    <Content Include="App_Data\VerTablaTareas.xsl" />
-    <Content Include="CambiarPassword.aspx" />
-    <Content Include="Confirmar.aspx" />
-    <Content Include="Coordinador\MediaHoras.aspx" />
-    <Content Include="Inicio.aspx" />
-    <Content Include="Coordinador\ExportarTareas.aspx" />
-    <Content Include="Coordinador\ImportarXML.aspx" />
-    <Content Include="Profesor\InsertarTarea.aspx" />
-    <Content Include="Profesor\Profesor.aspx" />
-    <Content Include="Profesor\VerTareasProfesor.aspx" />
-    <Content Include="Registro.aspx" />
-    <Content Include="UsuariosOnline.ascx" />
+    <Content Include="MediaDedicacion.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alumno\Alumno.aspx.cs">
-      <DependentUpon>Alumno.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Alumno\Alumno.aspx.designer.cs">
-      <DependentUpon>Alumno.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Alumno\InstanciarTarea.aspx.cs">
-      <DependentUpon>InstanciarTarea.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Alumno\InstanciarTarea.aspx.designer.cs">
-      <DependentUpon>InstanciarTarea.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Alumno\VerTareasEstudiante.aspx.cs">
-      <DependentUpon>VerTareasEstudiante.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Alumno\VerTareasEstudiante.aspx.designer.cs">
-      <DependentUpon>VerTareasEstudiante.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CambiarPassword.aspx.cs">
-      <DependentUpon>CambiarPassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CambiarPassword.aspx.designer.cs">
-      <DependentUpon>CambiarPassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Confirmar.aspx.cs">
-      <DependentUpon>Confirmar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Confirmar.aspx.designer.cs">
-      <DependentUpon>Confirmar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Coordinador\MediaHoras.aspx.cs">
-      <DependentUpon>MediaHoras.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Coordinador\MediaHoras.aspx.designer.cs">
-      <DependentUpon>MediaHoras.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Inicio.aspx.cs">
-      <DependentUpon>Inicio.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Inicio.aspx.designer.cs">
-      <DependentUpon>Inicio.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Coordinador\ExportarTareas.aspx.cs">
-      <DependentUpon>ExportarTareas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Coordinador\ExportarTareas.aspx.designer.cs">
-      <DependentUpon>ExportarTareas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Coordinador\ImportarXML.aspx.cs">
-      <DependentUpon>ImportarXML.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Coordinador\ImportarXML.aspx.designer.cs">
-      <DependentUpon>ImportarXML.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Profesor\InsertarTarea.aspx.cs">
-      <DependentUpon>InsertarTarea.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Profesor\InsertarTarea.aspx.designer.cs">
-      <DependentUpon>InsertarTarea.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Profesor\Profesor.aspx.cs">
-      <DependentUpon>Profesor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Profesor\Profesor.aspx.designer.cs">
-      <DependentUpon>Profesor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Profesor\VerTareasProfesor.aspx.cs">
-      <DependentUpon>VerTareasProfesor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Profesor\VerTareasProfesor.aspx.designer.cs">
-      <DependentUpon>VerTareasProfesor.aspx</DependentUpon>
+    <Compile Include="MediaDedicacion.asmx.cs">
+      <DependentUpon>MediaDedicacion.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registro.aspx.cs">
-      <DependentUpon>Registro.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Registro.aspx.designer.cs">
-      <DependentUpon>Registro.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UsuariosOnline.ascx.cs">
-      <DependentUpon>UsuariosOnline.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UsuariosOnline.ascx.designer.cs">
-      <DependentUpon>UsuariosOnline.ascx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App_Data\tareas.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\hads22-14 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
@@ -202,21 +87,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Lab3_Datos\Lab3_AccesoDatos.csproj">
-      <Project>{AFF096A1-F391-402C-AA2F-7B05E5ACC64D}</Project>
-      <Name>Lab3_AccesoDatos</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Lab3_Dominio\Lab3_Dominio.csproj">
-      <Project>{EB6DD5C1-2EDD-48CF-AE4C-76942BF2B09D}</Project>
-      <Name>Lab3_Dominio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Lab3_LogicaNegocio\Lab3_LogicaNegocio.csproj">
-      <Project>{220C3318-EFD3-4F74-88EB-239A84891EDC}</Project>
-      <Name>Lab3_LogicaNegocio</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -230,9 +100,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51675</DevelopmentServerPort>
+          <DevelopmentServerPort>60640</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44311/</IISUrl>
+          <IISUrl>https://localhost:44359/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

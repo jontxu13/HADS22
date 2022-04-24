@@ -10,13 +10,18 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            REGISTRO DE USUARIOS<br />
-            Email:
-            <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+            REGISTRO DE USUARIOS
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                                Email:
+                      <asp:TextBox ID="txtEmail" runat="server" AutoPostBack="True" OnTextChanged="txtEmail_TextChanged"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtEmail" ErrorMessage="*" ForeColor="#FF3300"></asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtEmail" ErrorMessage="Formato de email incorrecto" ForeColor="#FF3300" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-            <br />
-            Nombre: 
+            <asp:Label ID="txtMatriculado" runat="server"></asp:Label>
+                                <br />
+                              Nombre: 
             <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtNombre" ErrorMessage="*" ForeColor="#FF3300"></asp:RequiredFieldValidator>
             <br />
@@ -40,8 +45,11 @@
                 <asp:ListItem>Profesor</asp:ListItem>
             </asp:RadioButtonList>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="rdbtnRol" ErrorMessage="Seleccione rol." ForeColor="#FF3300"></asp:RequiredFieldValidator>
-&nbsp;</div>
-        <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" OnClick="btnRegistrar_Click1" />
+&nbsp;<br /> </div>
+        &nbsp;<asp:Button ID="btnRegistrar" runat="server" Text="Registrar" OnClick="btnRegistrar_Click1" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+
         <p>
             <asp:Label ID="error" runat="server" ForeColor="#FF3300"></asp:Label>
         </p>

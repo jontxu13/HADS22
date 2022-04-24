@@ -1,5 +1,6 @@
 ﻿using Lab3_LogicaNegocio;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -70,6 +71,10 @@ namespace Lab2.Alumno
         {
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Hasta pronto!'); location.href='../Inicio.aspx'", true);
             FormsAuthentication.SignOut();
+            Application["nAlumnos"] = (int)Application["nAlumnos"] - 1;
+            ArrayList cAlumnos = (ArrayList)Application["cAlumnos"];
+            cAlumnos.Remove((string)Session["user"]);
+            Application["cAlumnos"] = cAlumnos;
             Session.Abandon();
         }
 

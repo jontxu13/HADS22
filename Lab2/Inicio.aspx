@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Inicio.aspx.cs" Inherits="Lab2.Inicio1" %>
 
+<%@ Register src="UsuariosOnline.ascx" tagname="UsuariosOnline" tagprefix="uc1" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -27,8 +29,8 @@
                 <asp:Label ID="error" runat="server" ForeColor="#FF3300"></asp:Label>
                 <br />
     <a href="Registro.aspx">Quiero registrarme</a><br />
-    <a href="javascript:__doPostBack('LinkButton1','')">Modificar Contraseña</a></form>
+    <a href="javascript:__doPostBack('LinkButton1','')">Modificar Contraseña</a></div>
         </div>
     </form>
-</body>
+        </body>
 </html>
